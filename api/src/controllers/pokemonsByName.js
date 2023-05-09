@@ -31,6 +31,11 @@ const pokemonsByName = async (req, res) => {
       speed: data.stats[5].base_stat,
       height: data.height,
       weight: data.weight,
+      types: data.types.map((obj) => {
+        return {
+          name: obj.type.name,
+        };
+      }),
     };
 
     res.status(200).json(pokemon);

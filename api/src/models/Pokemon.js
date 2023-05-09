@@ -8,7 +8,10 @@ module.exports = (sequelize) => {
     {
       id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         primaryKey: true,
+        autoIncrement: true,
+        initialValue: 51,
       },
       name: {
         type: DataTypes.STRING,
@@ -38,6 +41,10 @@ module.exports = (sequelize) => {
       },
       weight: {
         type: DataTypes.INTEGER,
+      },
+      types: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
     },
     {
