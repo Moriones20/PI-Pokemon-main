@@ -23,7 +23,7 @@ const postPokemon = async (req, res) => {
     });
 
     if (!created)
-      return res.status(400).json({ message: "Personaje ya existe" });
+      return res.status(400).json({ message: "The character already exists" });
 
     res.status(200).json(pokemon);
   } catch (error) {
