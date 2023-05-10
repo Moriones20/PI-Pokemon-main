@@ -1,12 +1,10 @@
 const { Pokemon, Type } = require("../db");
 
-let id = 1300;
-
 const postPokemon = async (req, res) => {
   try {
     const { image, hp, attack, defense, speed, height, weight, types } =
       req.body;
-    const name = req.body.name.toLowerCase()
+    const name = req.body.name.toLowerCase();
 
     const dbTypes = await Type.findAll();
 
@@ -19,9 +17,12 @@ const postPokemon = async (req, res) => {
     if (!name || !image || !hp || !attack || !defense || !types)
       return res.status(401).json({ error: "Missing data" });
 
+    const count = await Pokemon.count();
+    const nextId = count + 1299;
+
     const [pokemon, created] = await Pokemon.findOrCreate({
       where: {
-        id: id++,
+        id: nextId,
         name,
         image,
         hp,
