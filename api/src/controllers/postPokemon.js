@@ -1,4 +1,14 @@
+require("dotenv").config();
+const { API_URL } = process.env;
+const axios = require("axios");
 const { Pokemon, Type } = require("../db");
+
+let count = 0;
+let nextLocalId = 1;
+
+axios.get(`${API_URL}/pokemon?limit=10000`).then(response => {
+  count = response.data.count;
+});
 
 const postPokemon = async (req, res) => {
   try {
@@ -17,12 +27,12 @@ const postPokemon = async (req, res) => {
     if (!name || !image || !hp || !attack || !defense || !types)
       return res.status(401).json({ error: "Missing data" });
 
-    const count = await Pokemon.count();
-    const nextId = count + 1299;
+    const id = count + nextLocalId;
+    nextLocalId++;
 
     const [pokemon, created] = await Pokemon.findOrCreate({
       where: {
-        id: nextId,
+        id,
         name,
         image,
         hp,
