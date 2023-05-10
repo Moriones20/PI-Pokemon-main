@@ -10,19 +10,14 @@ const pokemonById = async (req, res) => {
     if (!Number.isInteger(Number(id)))
       return res.status(400).json({ message: "ID must be a number" });
 
+    const pokemonFound = await Pokemon.findOne({
+      where: {
+        id,
+      },
+    });
+    if (pokemonFound) return res.status(200).json(pokemonFound);
+
     const { data } = await axios.get(`${API_URL}/pokemon/${id}`);
-
-    if (!data.id) {
-      const pokemonFound = await Pokemon.findOne({
-        where: {
-          id,
-        },
-      });
-      if (!pokemonFound)
-        return res.status(404).json({ message: "Pokemon not found" });
-
-      res.status(200).json(pokemonFound);
-    }
 
     const pokemon = {
       id: data.id,
@@ -34,16 +29,21 @@ const pokemonById = async (req, res) => {
       speed: data.stats[5].base_stat,
       height: data.height,
       weight: data.weight,
-      types: data.types.map((obj) => {
-        return {
-          name: obj.type.name,
-        };
-      }),
+      types: data.types
+        .map((obj) => {
+          return {
+            name: obj.type.name,
+          };
+        })
+        .map((type) => type.name)
+        .join(", "),
     };
 
     res.status(200).json(pokemon);
   } catch (error) {
-    res.status(500).send(error.message);
+    error.response.status === 404
+      ? res.status(404).json({ message: "Pokemon not found" })
+      : res.status(500).send(error.message);
   }
 };
 

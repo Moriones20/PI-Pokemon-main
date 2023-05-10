@@ -15,12 +15,14 @@ const pokemons = async (req, res) => {
         id: pokemon.id,
         name: pokemon.name,
         image: pokemon.sprites.front_default,
-        types: pokemon.types.map((obj) => {
-          return {
-            name: obj.type.name,
-            url: obj.type.url,
-          };
-        }),
+        types: pokemon.types
+          .map((obj) => {
+            return {
+              name: obj.type.name,
+            };
+          })
+          .map((type) => type.name)
+          .join(", "),
       };
     });
 
