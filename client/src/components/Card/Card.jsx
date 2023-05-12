@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addPokemons } from "../../redux/actions";
@@ -16,7 +17,6 @@ const Card = () => {
   //pagination
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(12);
-
   const max = Math.ceil(Pokemons.length / perPage);
 
   return (

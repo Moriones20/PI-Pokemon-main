@@ -35,8 +35,7 @@ const pokemonById = async (req, res) => {
             name: obj.type.name,
           };
         })
-        .map((type) => type.name)
-        .join(", "),
+        .map((type) => type.name),
     };
 
     res.status(200).json(pokemon);

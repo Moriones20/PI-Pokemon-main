@@ -11,14 +11,14 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         pokemons: payload,
-        pokemonsByType: payload,
+        pokemonsAux: payload,
       };
 
     case FILTER:
       if (payload === "all") {
         return {
           ...state,
-          pokemons: state.pokemonsByType,
+          pokemonsAux: state.pokemons,
         };
       }
       return {};

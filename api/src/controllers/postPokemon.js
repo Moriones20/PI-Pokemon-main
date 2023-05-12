@@ -45,7 +45,7 @@ const postPokemon = async (req, res) => {
         speed,
         height,
         weight,
-        types: types.join(", "),
+        types,
       },
     });
 

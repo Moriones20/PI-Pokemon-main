@@ -34,8 +34,7 @@ const pokemons = async (req, res) => {
               name: obj.type.name,
             };
           })
-          .map((type) => type.name)
-          .join(", "),
+          .map((type) => type.name),
         CreateBy: "API",
         attack: pokemon.stats[1].base_stat,
       };

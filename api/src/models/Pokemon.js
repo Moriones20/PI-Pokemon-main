@@ -41,7 +41,7 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
       },
       types: {
-        type: DataTypes.STRING,
+        type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: false,
       },
       CreateBy: {
