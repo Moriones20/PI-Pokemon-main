@@ -6,6 +6,16 @@ const { Pokemon } = require("../db");
 const pokemons = async (req, res) => {
   try {
     const dbPokemons = await Pokemon.findAll();
+    const dbPokemonsReduced = dbPokemons.map((pokemon) => {
+      return {
+        id: pokemon.id,
+        name: pokemon.name,
+        image: pokemon.image,
+        types: pokemon.types,
+        CreateBy: pokemon.CreateBy,
+        attack: pokemon.attack,
+      };
+    });
 
     const { data } = await axios.get(`${API_URL}/pokemon?limit=50`);
     const apiPokemons = data.results;
@@ -26,10 +36,12 @@ const pokemons = async (req, res) => {
           })
           .map((type) => type.name)
           .join(", "),
+        CreateBy: "API",
+        attack: pokemon.stats[1].base_stat,
       };
     });
 
-    const allPokemons = [...dbPokemons, ...apiPokemonDetail];
+    const allPokemons = [...apiPokemonDetail, ...dbPokemonsReduced];
 
     res.status(200).json(allPokemons);
   } catch (error) {

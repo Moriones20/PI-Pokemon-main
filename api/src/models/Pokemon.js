@@ -44,6 +44,10 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      CreateBy: {
+        type: DataTypes.STRING,
+        defaultValue: "DB"
+      }
     },
     {
       timestamps: false,
