@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addPokemons } from "../../redux/actions";
 import { NavLink } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
+import Filter from "./Options/Filter/Filter";
+import Order from "./Options/Order/Order";
 
 const Card = () => {
   //Add pokemons
@@ -21,17 +23,19 @@ const Card = () => {
 
   return (
     <div>
+      <Filter />
+      <Order />
       <h1>Personajes</h1>
-      {Pokemons?.slice(
+      {Array.isArray(Pokemons) && Pokemons?.slice(
         (page - 1) * perPage,
         (page - 1) * perPage + perPage
       ).map((pokemon) => {
         return (
-          <NavLink to={`/detail/${pokemon.id}`}>
-            <div key={pokemon.id}>
+          <NavLink key={pokemon.id} to={`/detail/${pokemon.id}`}>
+            <div>
               <h2>{pokemon.name}</h2>
               <img src={pokemon.image} alt={pokemon.name} />
-              <h3>{pokemon.types}</h3>
+              <h3>{pokemon.types?.join(", ")}</h3>
               <h3>{pokemon.id}</h3>
             </div>
           </NavLink>

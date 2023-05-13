@@ -1,6 +1,6 @@
 import { useState } from "react";
-import arrowLeft from "../../Assets/arrowLeft.png";
-import arrowRight from "../../Assets/arrowRight.png";
+import { ReactComponent as ArrowLeftCircle } from "../../Assets/arrow-left-circle.svg";
+import { ReactComponent as ArrowRightCircle } from "../../Assets/arrow-right-circle.svg";
 
 const Pagination = ({ page, setPage, max }) => {
   const [input, setInput] = useState(1);
@@ -35,7 +35,7 @@ const Pagination = ({ page, setPage, max }) => {
   return (
     <div>
       <button disabled={page === 1 || page < 1} onClick={previousPage}>
-        <img src={arrowLeft} alt="arrowLeft" />
+        <ArrowLeftCircle />
       </button>
       <input
         name="page"
@@ -46,7 +46,7 @@ const Pagination = ({ page, setPage, max }) => {
       />
       <p> de {max} </p>
       <button disabled={page === max || page > max} onClick={nextPage}>
-        <img src={arrowRight} alt="arrowRight" />
+        <ArrowRightCircle />
       </button>
     </div>
   );
