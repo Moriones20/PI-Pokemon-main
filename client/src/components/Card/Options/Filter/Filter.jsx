@@ -1,23 +1,37 @@
-import { useDispatch } from "react-redux";
-import { filterCards } from "../../../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { filterCardsType, filterCardsCreated } from "../../../../redux/actions";
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const Types = useSelector((state) => state.types);
 
-  const handleFilter = (event) => {
-    dispatch(filterCards(event.target.value));
+  const handleFilterType = (event) => {
+    dispatch(filterCardsType(event.target.value));
+  };
+
+  const handleFilterCreated = (event) => {
+    dispatch(filterCardsCreated(event.target.value));
   };
 
   return (
     <div>
-      <select name="filter" onChange={handleFilter}>
-        <option value="">Choose a type</option>
-        <option value="all">all</option>
-        <option value="normal">normal</option>
-        <option value="fighting">fighting</option>
-        <option value="rock">rock</option>
-        <option value="bug">bug</option>
-        <option value="poison">poison</option>
+      <select name="filterType" onChange={handleFilterType}>
+        <option value="all">Select a type</option>
+        <option value="all">All</option>
+        {Types?.map((type) => {
+          return (
+            <option value={type.name} key={type.id}>
+              <input type="checkbox" name={type.name} key={type.id} />
+              {type.name.charAt(0).toUpperCase() + type.name.slice(1)}
+            </option>
+          );
+        })}
+      </select>
+      <select name="filterCreated" onChange={handleFilterCreated}>
+        <option value="all">Select a root</option>
+        <option value="all">All</option>
+        <option value="API">API</option>
+        <option value="BD">Database</option>
       </select>
     </div>
   );

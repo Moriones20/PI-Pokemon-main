@@ -1,5 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { ADD_POKEMONS, SEARCH_BY_ID, FILTER, ORDER } from "./action-types";
+import {
+  ADD_POKEMONS,
+  SEARCH_BY_ID,
+  FILTER_TYPE,
+  FILTER_CREATED,
+  ORDER,
+} from "./action-types";
 import axios from "axios";
 
 export const addPokemons = () => {
@@ -11,10 +17,11 @@ export const addPokemons = () => {
         axios.get(loadTypes),
         axios.get(endpoint),
       ]);
+      const types = typesResponse.data;
       const pokemons = pokemonsResponse.data;
       return dispatch({
         type: ADD_POKEMONS,
-        payload: pokemons,
+        payload: { pokemons, types },
       });
     } catch (error) {
       throw new Error(error.message);
@@ -26,7 +33,7 @@ export const searchById = (id) => {
   const endpoint = `http://localhost:3001/pokemons/${id}`;
   return async (dispatch) => {
     try {
-      const {data} = await axios.get(endpoint);
+      const { data } = await axios.get(endpoint);
       console.log(data);
       return dispatch({
         type: SEARCH_BY_ID,
@@ -38,10 +45,17 @@ export const searchById = (id) => {
   };
 };
 
-export const filterCards = (type) => {
+export const filterCardsType = (type) => {
   return {
-    type: FILTER,
+    type: FILTER_TYPE,
     payload: type,
+  };
+};
+
+export const filterCardsCreated = (created) => {
+  return {
+    type: FILTER_CREATED,
+    payload: created,
   };
 };
 
