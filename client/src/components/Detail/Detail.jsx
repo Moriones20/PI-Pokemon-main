@@ -1,23 +1,42 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 const Detail = () => {
-  return(
+  const { id } = useParams();
+  const endpoint = `http://localhost:3001/pokemons/${id}`;
+  const [pokemon, setPokemon] = useState({});
+
+  useEffect(() => {
+    try {
+      axios
+        .get(endpoint)
+        .then((response) => response.data)
+        .then((data) => {
+          if (data.name) return setPokemon(data);
+          window.alert("There aren't Pokemons with that ID!");
+        });
+    } catch (error) {
+      throw new Error(error.message);
+    }
+
+    return setPokemon({});
+  }, [endpoint, id]);
+
+  return (
     <div>
-      <h1>Name</h1>
-      <h3>ID</h3>
-      <img src="" alt="Pokemon+ID" />
-      <h3>Vida</h3>
-      <h3>Ataque</h3>
-      <h3>Defensa</h3>
-      <h3>Velocidad</h3>
-      <h3>Altura</h3>
-      <h3>Peso</h3>
-      <h3>Tipo</h3>
+      <h1>{pokemon?.name}</h1>
+      <p>{pokemon?.id}</p>
+      <img src={pokemon?.image} alt={pokemon?.name} />
+      <h3>Hp: {pokemon?.hp}</h3>
+      <h3>Attack: {pokemon?.attack}</h3>
+      <h3>Defense: {pokemon?.defense}</h3>
+      <h3>Speed: {pokemon?.speed}</h3>
+      <h3>Height: {pokemon?.height}</h3>
+      <h3>Weight: {pokemon?.weight}</h3>
+      <h3>Type: {pokemon?.types?.join(", ")}</h3>
     </div>
-  )
+  );
 };
 
 export default Detail;
-
-
-// Velocidad (si tiene).
-// Altura (si tiene).
-// Peso (si tiene).
