@@ -2,6 +2,7 @@
 import {
   ADD_POKEMONS,
   SEARCH_BY_ID,
+  SEARCH_BY_NAME,
   FILTER_TYPE,
   FILTER_CREATED,
   ORDER,
@@ -34,9 +35,23 @@ export const searchById = (id) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
-      console.log(data);
       return dispatch({
         type: SEARCH_BY_ID,
+        payload: data,
+      });
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
+};
+
+export const searchByName = (name) => {
+  const endpoint = `http://localhost:3001/pokemons/byname/?name=${name}`;
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(endpoint);
+      return dispatch({
+        type: SEARCH_BY_NAME,
         payload: data,
       });
     } catch (error) {

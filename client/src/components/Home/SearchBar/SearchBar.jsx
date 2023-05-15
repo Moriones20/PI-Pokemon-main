@@ -1,33 +1,34 @@
 import { useDispatch } from "react-redux";
-import { searchById } from "../../../redux/actions";
+import { searchById, searchByName } from "../../../redux/actions";
 import { useState } from "react";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
-  const [id, setId] = useState("");
+  const [idOrName, setIdOrName] = useState("");
 
   const onChange = (event) => {
-    setId(event.target.value);
+    setIdOrName(event.target.value);
   };
 
   const onKeyDown = (event) => {
     if (event.keyCode === 13) {
-      onSearch(id);
-      setId("");
+      onSearch(idOrName);
+      setIdOrName("");
     }
   };
 
   const onSearch = () => {
-    dispatch(searchById(id));
+    if (isNaN(idOrName)) return dispatch(searchByName(idOrName));
+    dispatch(searchById(idOrName));
   };
 
   return (
     <div>
-      <input type="text" onChange={onChange} onKeyDown={onKeyDown} value={id} />
+      <input type="text" onChange={onChange} onKeyDown={onKeyDown} value={idOrName} />
       <button
         onClick={() => {
           onSearch();
-          setId("");
+          setIdOrName("");
         }}
       >
         Buscar

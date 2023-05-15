@@ -1,6 +1,7 @@
 import {
   ADD_POKEMONS,
   SEARCH_BY_ID,
+  SEARCH_BY_NAME,
   FILTER_TYPE,
   FILTER_CREATED,
   ORDER,
@@ -26,10 +27,17 @@ const reducer = (state = initialState, { type, payload }) => {
       };
 
     case SEARCH_BY_ID:
-      const pokemons = [payload];
+      const pokemonId = [payload];
       return {
         ...state,
-        pokemons: pokemons,
+        pokemons: pokemonId,
+      };
+
+    case SEARCH_BY_NAME:
+      const pokemonName = [payload];
+      return {
+        ...state,
+        pokemons: pokemonName,
       };
 
     case FILTER_TYPE:
