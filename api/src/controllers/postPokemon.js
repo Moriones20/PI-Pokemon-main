@@ -6,7 +6,7 @@ const { Pokemon, Type } = require("../db");
 let count = 0;
 let nextLocalId = 0;
 
-axios.get(`${API_URL}/pokemon?limit=10000`).then((response) => {
+axios.get(`${API_URL}/pokemon`).then((response) => {
   count = response.data.count;
 });
 
@@ -50,9 +50,9 @@ const postPokemon = async (req, res) => {
     });
 
     if (!created)
-      return res.status(400).json({ message: "The character already exists" });
+      return res.status(409).json({ message: "The character already exists" });
 
-    res.status(200).json(pokemon);
+    res.status(200).json({message: "The Pokemon has been created!"});
     nextLocalId++;
   } catch (error) {
     res.status(500).send(error.message);

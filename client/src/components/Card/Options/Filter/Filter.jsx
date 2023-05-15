@@ -21,7 +21,6 @@ const Filter = () => {
         {Types?.map((type) => {
           return (
             <option value={type.name} key={type.id}>
-              <input type="checkbox" name={type.name} key={type.id} />
               {type.name.charAt(0).toUpperCase() + type.name.slice(1)}
             </option>
           );
