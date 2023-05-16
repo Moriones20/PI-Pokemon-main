@@ -1,0 +1,35 @@
+.container-filter {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.filter-type,
+.filter-root {
+  margin-bottom: 10px;
+}
+
+.filter-type,
+.filter-root,
+.container-roots {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+}
+
+.btn-roots input,
+.btn-types input {
+  text-align: left;
+  width: 180px;
+  margin-bottom: 6px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 18px;
+  background: transparent;
+  transition: background 0.3s ease-out;
+}
+
+.btn-roots:hover input,
+.btn-types:hover input {
+  background: #c2c2c2;
+}

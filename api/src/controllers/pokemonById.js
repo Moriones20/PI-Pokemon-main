@@ -22,7 +22,7 @@ const pokemonById = async (req, res) => {
     const pokemon = {
       id: data.id,
       name: data.name,
-      image: data.sprites.front_default,
+      image: data.sprites.other["official-artwork"].front_default,
       hp: data.stats[0].base_stat,
       attack: data.stats[1].base_stat,
       defense: data.stats[2].base_stat,
@@ -40,9 +40,11 @@ const pokemonById = async (req, res) => {
 
     res.status(200).json(pokemon);
   } catch (error) {
-    error.response.status === 404
-      ? res.status(404).json({ message: "Pokemon not found" })
-      : res.status(500).send(error.message);
+    if (error.response && error.response.status === 404) {
+      res.status(404).json({ message: "Pokemon not found" });
+    } else {
+      res.status(500).send(error.message);
+    }
   }
 };
 

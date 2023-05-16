@@ -1,0 +1,32 @@
+.container-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-cards a {
+  color: ghostwhite;
+  text-decoration: none;
+}
+
+.pokemons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pokemon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  background: url(../../Assets/Forest.jpg);
+  margin: 16px 16px;
+  padding: 10px 16px;
+  border-radius: 30px;
+}
+
+.pokemon img {
+  width: 150px;
+}

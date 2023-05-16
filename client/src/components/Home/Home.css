@@ -1,0 +1,13 @@
+.container-home {
+  display: flex;
+  justify-content: center;
+  padding-left: 240px;
+}
+
+.container-sidebar {
+  position: absolute;
+  left: 0;
+  width: 240px;
+  padding-left: 10px;
+  padding-top: 20px;
+}

@@ -40,7 +40,7 @@ export const searchById = (id) => {
         payload: data,
       });
     } catch (error) {
-      throw new Error(error.message);
+      window.alert(error.response.data.message);
     }
   };
 };
@@ -55,7 +55,7 @@ export const searchByName = (name) => {
         payload: data,
       });
     } catch (error) {
-      throw new Error(error.message);
+      window.alert(error.response.data.message);
     }
   };
 };

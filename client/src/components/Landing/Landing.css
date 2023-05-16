@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #ebebeb;
   height: 100vh;
 }
 
@@ -42,6 +41,7 @@
 .landing-box img {
   width: 400px;
   margin-bottom: 20px;
+  margin-left: 60px;
 }
 
 .landing-box button {

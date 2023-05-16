@@ -64,9 +64,8 @@ const reducer = (state = initialState, { type, payload }) => {
       if (payload === "all") {
         return {
           ...state,
-          pokemons: state.pokemonsAux,
-          pokemonsCreated: state.pokemonsAux,
-          pokemonsOrder: state.pokemonsAux,
+          pokemons: state.pokemonsCreated,
+          pokemonsOrder: state.pokemonsCreated,
         };
       } else {
         const filteredPokemons = state.pokemonsCreated.filter(

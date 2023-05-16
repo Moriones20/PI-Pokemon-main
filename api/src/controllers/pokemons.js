@@ -27,7 +27,7 @@ const pokemons = async (req, res) => {
       return {
         id: pokemon.id,
         name: pokemon.name,
-        image: pokemon.sprites.front_default,
+        image: pokemon.sprites.other["official-artwork"].front_default,
         types: pokemon.types
           .map((obj) => {
             return {
