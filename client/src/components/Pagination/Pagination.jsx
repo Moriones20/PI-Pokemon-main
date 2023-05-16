@@ -1,3 +1,4 @@
+import "./Pagination.css"
 import { useState } from "react";
 import { ReactComponent as ArrowLeftCircle } from "../../Assets/arrow-left-circle.svg";
 import { ReactComponent as ArrowRightCircle } from "../../Assets/arrow-right-circle.svg";
@@ -33,8 +34,8 @@ const Pagination = ({ page, setPage, max }) => {
   };
 
   return (
-    <div>
-      <button disabled={page === 1 || page < 1} onClick={previousPage}>
+    <div className="paginate-container">
+      <button disabled={page === 1 || page < 1} onClick={previousPage} className="btn-left">
         <ArrowLeftCircle />
       </button>
       <input
@@ -45,7 +46,7 @@ const Pagination = ({ page, setPage, max }) => {
         value={input}
       />
       <p> de {max} </p>
-      <button disabled={page === max || page > max} onClick={nextPage}>
+      <button disabled={page === max || page > max} onClick={nextPage} className="btn-right">
         <ArrowRightCircle />
       </button>
     </div>

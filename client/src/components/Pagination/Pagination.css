@@ -1,0 +1,30 @@
+.paginate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.paginate-container button {
+  background: transparent;
+  border: none;
+  margin: 0 10px 0 8px;
+  border-radius: 100%;
+  transition: background 0.3s ease-out;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+  background: #c2c2c2;
+}
+
+.paginate-container input {
+  width: 21px;
+  padding: 2px 4px;
+  font-size: 15px;
+}
+
+.paginate-container p {
+  margin: 0 8px;
+}
