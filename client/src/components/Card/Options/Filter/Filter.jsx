@@ -30,7 +30,7 @@ const Filter = () => {
         <option value="all">Select a root</option>
         <option value="all">All</option>
         <option value="API">API</option>
-        <option value="BD">Database</option>
+        <option value="DB">Database</option>
       </select>
     </div>
   );
