@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import {
   ADD_POKEMONS,
+  ADD_TYPES,
   SEARCH_BY_ID,
   SEARCH_BY_NAME,
   FILTER_TYPE,
@@ -11,18 +12,29 @@ import axios from "axios";
 
 export const addPokemons = () => {
   const endpoint = "http://localhost:3001/pokemons";
-  const loadTypes = "http://localhost:3001/types";
   return async (dispatch) => {
     try {
-      const [typesResponse, pokemonsResponse] = await Promise.all([
-        axios.get(loadTypes),
-        axios.get(endpoint),
-      ]);
-      const types = typesResponse.data;
+      const pokemonsResponse = await axios.get(endpoint);
       const pokemons = pokemonsResponse.data;
       return dispatch({
         type: ADD_POKEMONS,
-        payload: { pokemons, types },
+        payload: pokemons,
+      });
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
+};
+
+export const addTypes = () => {
+  const loadTypes = "http://localhost:3001/types";
+  return async (dispatch) => {
+    try {
+      const typesResponse = await axios.get(loadTypes);
+      const types = typesResponse.data;
+      return dispatch({
+        type: ADD_TYPES,
+        payload: types,
       });
     } catch (error) {
       throw new Error(error.message);

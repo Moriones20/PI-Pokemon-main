@@ -1,5 +1,6 @@
 import {
   ADD_POKEMONS,
+  ADD_TYPES,
   SEARCH_BY_ID,
   SEARCH_BY_NAME,
   FILTER_TYPE,
@@ -20,10 +21,16 @@ const reducer = (state = initialState, { type, payload }) => {
     case ADD_POKEMONS:
       return {
         ...state,
-        types: payload.types,
-        pokemons: payload.pokemons,
-        pokemonsAux: payload.pokemons,
-        pokemonsOrder: payload.pokemons,
+        pokemons: payload,
+        pokemonsAux: payload,
+        pokemonsCreated: payload,
+        pokemonsOrder: payload,
+      };
+
+    case ADD_TYPES:
+      return {
+        ...state,
+        types: payload,
       };
 
     case SEARCH_BY_ID:

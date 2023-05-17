@@ -4,26 +4,29 @@ const regexUrl = /^(ftp|http|https):\/\/[^ "]+$/;
 const Validation = (pokemon) => {
   let errors = {};
 
-  if (pokemon.name.length > 30) {
-    errors.name = "No puede tener mas de 30 caracteres";
+  if (pokemon.name && pokemon.name.length > 30) {
+    errors.name = "Cannot be longer than 30 characters";
   }
-  if (regexNameNumber.test(pokemon.name)) {
-    errors.name = "No puede tener numeros";
+  if (pokemon.name && regexNameNumber.test(pokemon.name)) {
+    errors.name = "Cannot have numbers";
   }
   if (!regexUrl.test(pokemon.image)) {
-    errors.image = "Tiene que ser una URL valida";
+    errors.image = "Must be a valid URL";
   }
   if (pokemon.hp > 999) {
-    errors.hp = "No puede ser mayor a 999";
+    errors.hp = "Cannot exceed 999";
   }
   if (pokemon.attack > 999) {
-    errors.attack = "No puede ser mayor a 999";
+    errors.attack = "Cannot exceed 999";
   }
   if (pokemon.defense > 999) {
-    errors.defense = "No puede ser mayor a 999";
+    errors.defense = "Cannot exceed 999";
   }
   if (pokemon.speed > 999) {
-    errors.speed = "No puede ser mayor a 999";
+    errors.speed = "Cannot exceed 999";
+  }
+  if (pokemon.types.length === 0) {
+    errors.types = "You must select at least one type";
   }
 
   return errors;

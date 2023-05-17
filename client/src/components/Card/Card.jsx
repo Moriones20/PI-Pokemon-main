@@ -2,7 +2,7 @@
 import "./Card.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addPokemons } from "../../redux/actions";
+import { addPokemons, addTypes } from "../../redux/actions";
 import { NavLink } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
 
@@ -13,6 +13,7 @@ const Card = () => {
 
   useEffect(() => {
     dispatch(addPokemons());
+    dispatch(addTypes());
   }, [dispatch]);
 
   //pagination
