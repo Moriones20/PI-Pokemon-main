@@ -1,0 +1,39 @@
+.nav-container {
+  background: #c2c2c2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 40px;
+}
+
+.nav-container a {
+  color: ghostwhite;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+}
+
+.links button {
+  display: flex;
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-left: 30px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-home:hover,
+.btn-create-pokemon:hover {
+  background: #ff1a1a;
+  box-shadow: 0 0 10px #ff0b0b;
+  color: #ebebeb;
+}
+
+.nav-container img {
+  width: 40px;
+}

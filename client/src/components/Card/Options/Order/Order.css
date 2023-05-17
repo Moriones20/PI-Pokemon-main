@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .btn-order input {
@@ -16,7 +17,7 @@
 }
 
 .btn-order:hover input {
-  background: #c2c2c2;
+  background: #FFCB05;
 }
 
 .container-orders {
