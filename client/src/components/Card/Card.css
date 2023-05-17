@@ -19,7 +19,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border-left: 1px solid #c2c2c2;
 }
 
 .text-container-detail {

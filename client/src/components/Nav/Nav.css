@@ -38,10 +38,18 @@
   width: 40px;
 }
 
+.icon-pokemon {
+  transition: 0.3s ease-out;
+}
+
 .logout {
   transition: 0.3s ease-out;
 }
 
 .logout:hover {
   transform: translateX(-5px);
+}
+
+.icon-pokemon:hover {
+  transform: translateX(5px);
 }

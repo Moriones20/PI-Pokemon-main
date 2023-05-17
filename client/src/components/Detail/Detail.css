@@ -1,0 +1,76 @@
+.container-detail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 90vh;
+}
+
+.detail-img {
+  background: url(../../Assets/pokemon-detail.jpg);
+  background-size: cover;
+  color: ghostwhite;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 393px;
+  border-radius: 24px;
+  /* margin: 30px; */
+  box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.detail-img p {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.detail-img h1 {
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    #5c5c5c,
+    #5c5c5c 0.01%,
+    #1d1d1d 3%,
+    #1d1d1d 97%,
+    black 99.99%,
+    black
+  );
+  width: 326px;
+  padding: 0;
+  transform: translateX(-3px);
+}
+
+.detail-img img {
+  width: 300px;
+  justify-content: center;
+}
+
+.detail-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateX(-300px);
+  animation-name: slide-and-fade;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  /* background-color: blue; */
+  padding: 24px;
+  border-radius: 0 24px 24px 0;
+  box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes slide-and-fade {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+

@@ -45,7 +45,7 @@ const Pagination = ({ page, setPage, max }) => {
         autoComplete="off"
         value={input}
       />
-      <p> de {max} </p>
+      <p> of {max} </p>
       <button disabled={page === max || page > max} onClick={nextPage} className="btn-right">
         <ArrowRightCircle />
       </button>

@@ -10,4 +10,8 @@
   width: 240px;
   padding-left: 10px;
   padding-top: 20px;
+  border-width: 0 3px 3px 0;
+  border-color: #c2c2c2;
+  border-style: solid;
+  border-bottom-right-radius: 20px;
 }

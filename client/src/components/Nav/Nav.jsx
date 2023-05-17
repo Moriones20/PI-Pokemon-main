@@ -9,15 +9,12 @@ const Nav = () => {
   return (
     <nav>
       <div className="nav-container">
-        <div className="icon-pokemon">
-          <img src={iconPokemon} alt="Pokemon-icon" />
-        </div>
+          <NavLink to={"/home"}>
+            <div className="icon-pokemon">
+              <img src={iconPokemon} alt="Pokemon-icon" />
+            </div>
+          </NavLink>
         <div className="links">
-          {location.pathname !== "/home" && (
-            <NavLink to={"/home"}>
-              <button className="btn-home">Home</button>
-            </NavLink>
-          )}
           {location.pathname !== "/create" && (
             <NavLink to={"/create"}>
               <button className="btn-create-pokemon">Create Pokemon</button>
