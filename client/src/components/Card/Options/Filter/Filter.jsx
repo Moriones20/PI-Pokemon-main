@@ -36,7 +36,7 @@ const Filter = () => {
           />
         </div>
         {isOpenType && (
-          <>
+          <div className="container-types">
             <label>
               <input
                 type="radio"
@@ -57,7 +57,7 @@ const Filter = () => {
                 {type.name.charAt(0).toUpperCase() + type.name.slice(1)}
               </label>
             ))}
-          </>
+          </div>
         )}
       </div>
 

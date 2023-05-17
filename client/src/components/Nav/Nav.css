@@ -21,7 +21,7 @@
   background: transparent;
   border: none;
   padding: 10px 12px;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-left: 30px;
   font-size: 14px;
   transition: all 0.2s ease-in-out;
@@ -30,10 +30,18 @@
 .btn-home:hover,
 .btn-create-pokemon:hover {
   background: #ff1a1a;
-  box-shadow: 0 0 10px #ff0b0b;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
   color: #ebebeb;
 }
 
 .nav-container img {
   width: 40px;
+}
+
+.logout {
+  transition: 0.3s ease-out;
+}
+
+.logout:hover {
+  transform: translateX(-5px);
 }
