@@ -7,10 +7,11 @@
 
 .container-cards h1 {
   margin: 10px 0;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .container-cards a {
-  color: ghostwhite;
+  color: black;
   text-decoration: none;
 }
 
@@ -21,6 +22,16 @@
   border-left: 1px solid #c2c2c2;
 }
 
+.text-container-detail {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.text-container-detail p {
+  justify-content: end;
+}
+
 .pokemon {
   display: flex;
   align-items: center;
@@ -29,9 +40,17 @@
   background: url(../../Assets/Forest.jpg);
   margin: 16px 16px;
   padding: 10px 16px;
-  border-radius: 30px;
+  border-radius: 6px;
+  border: 2px solid black;
+  transition: all 0.3s ease;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.4);
 }
 
 .pokemon img {
   width: 150px;
+}
+
+.pokemon:hover {
+ transform: translateY(-20px);
+ box-shadow: 10px 30px 8px rgba(0, 0, 0, 0.4);
 }

@@ -32,10 +32,11 @@ const Card = () => {
             return (
               <NavLink key={pokemon.id} to={`/detail/${pokemon.id}`}>
                 <div className="pokemon">
-                  <h2>{pokemon.name}</h2>
                   <img src={pokemon.image} alt={pokemon.name} />
-                  <h3>{pokemon.types?.join(", ")}</h3>
-                  <h3>{pokemon.id}</h3>
+                  <div className="text-container-detail">
+                    <h2>{pokemon.name}</h2>
+                    <h3>{pokemon.types?.join(", ")}</h3>
+                  </div>
                 </div>
               </NavLink>
             );

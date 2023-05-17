@@ -4,6 +4,9 @@
   align-items: center;
   flex-direction: row;
   margin: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.4);
 }
 
 .paginate-container button {
