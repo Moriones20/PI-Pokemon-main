@@ -1,13 +1,13 @@
 .nav-container {
-  background: #c2c2c2;
+  background: #333333;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 40px 0 40px;
+  padding: 8px 40px 4px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .nav-container a {
-  color: ghostwhite;
   text-decoration: none;
 }
 
@@ -23,19 +23,21 @@
   padding: 6px 12px;
   border-radius: 12px;
   font-size: 14px;
-  transform: translateY(-4px);
   transition: all 0.2s ease-out;
+  color: #ebebeb;
+  font-weight: 600;
+  letter-spacing: 0.8px;
 }
 
 .btn-create-pokemon:hover {
   background: #ff1a1a;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-  color: #ebebeb;
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
 .nav-container img {
   width: 30px;
+  filter: invert(100%);
 }
 
 .icon-pokemon {

@@ -9,7 +9,7 @@
   flex-direction: column;
   gap: 10px;
   width: 520px;
-  background-color: #fff;
+  background-color: #333333;
   padding: 20px;
   border-radius: 20px;
   position: relative;
@@ -19,9 +19,9 @@
 
 .title {
   font-size: 28px;
-  color: black;
+  color: ghostwhite;
   font-weight: 600;
-  letter-spacing: -1px;
+  letter-spacing: -0.2px;
   position: relative;
   display: flex;
   align-items: center;
@@ -61,10 +61,12 @@
 }
 
 .form-create label .input-form {
+  background: #333333;
+  color: ghostwhite;
   width: 100%;
   padding: 10px 10px 20px 10px;
   outline: 0;
-  border: 1px solid rgba(105, 105, 105, 0.397);
+  border: 1px solid #5c5c5c;
   border-radius: 10px;
 }
 
@@ -72,7 +74,7 @@
   position: absolute;
   left: 10px;
   top: 15px;
-  color: grey;
+  color: #c2c2c2;
   font-size: 0.9em;
   cursor: text;
   transition: 0.3s ease;
@@ -90,7 +92,7 @@
 }
 
 .form-create label .input-form:valid + span {
-  color: green;
+  color: #ddae00;
 }
 
 .submit-disabled {
@@ -111,6 +113,7 @@
   border-radius: 10px;
   color: black;
   font-size: 16px;
+  font-weight: 600;
   transition: .3s ease;
 }
 

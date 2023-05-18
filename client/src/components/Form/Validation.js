@@ -25,9 +25,6 @@ const Validation = (pokemon) => {
   if (pokemon.speed > 999) {
     errors.speed = "Cannot exceed 999";
   }
-  if (pokemon.types.length === 0) {
-    errors.types = "You must select at least one type";
-  }
 
   return errors;
 };

@@ -7,6 +7,7 @@
   padding: 10px 20px;
   border-radius: 4px;
   box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.4);
+  background: #ebebeb;
 }
 
 .paginate-container button {

@@ -36,7 +36,6 @@ const Form = () => {
     pokemon.hp &&
     pokemon.attack &&
     pokemon.defense &&
-    pokemon.speed &&
     selectedTypes.length > 0;
 
   useEffect(() => {
@@ -75,7 +74,7 @@ const Form = () => {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     if (Object.values(errors).some((error) => error !== "")) {
       try {
         const { data } = await axios.post(endpoint, pokemon);
@@ -171,7 +170,7 @@ const Form = () => {
               type="number"
               name="speed"
               autoComplete="off"
-              required={true}
+              required={false}
               value={pokemon.speed}
               onChange={handleChange}
               className="input-form"

@@ -17,7 +17,7 @@ const pokemons = async (req, res) => {
       };
     });
 
-    const { data } = await axios.get(`${API_URL}/pokemon?limit=200`);
+    const { data } = await axios.get(`${API_URL}/pokemon?limit=100`);
     const apiPokemons = data.results;
     const pokemonData = await Promise.all(
       apiPokemons.map((pokemon) => axios.get(pokemon.url))
@@ -40,7 +40,7 @@ const pokemons = async (req, res) => {
       };
     });
 
-    const allPokemons = [...apiPokemonDetail, ...dbPokemonsReduced];
+    const allPokemons = [...dbPokemonsReduced, ...apiPokemonDetail];
 
     res.status(200).json(allPokemons);
   } catch (error) {
