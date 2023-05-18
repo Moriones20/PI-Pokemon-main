@@ -74,7 +74,7 @@ const Form = () => {
   };
 
   const handleSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     if (Object.values(errors).some((error) => error !== "")) {
       try {
         const { data } = await axios.post(endpoint, pokemon);
@@ -90,7 +90,7 @@ const Form = () => {
   return (
     <div className="container-create">
       <form onSubmit={handleSubmit} className="form-create">
-        <p className="title">¡Crea tu propio Pokemon!</p>
+        <p className="title">Create your own Pokemon!</p>
 
         <label htmlFor="">
           <input
