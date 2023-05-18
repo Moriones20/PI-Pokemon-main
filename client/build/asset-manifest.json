@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/client/static/css/main.d741f32a.css",
+    "main.js": "/client/static/js/main.4a11a625.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/client/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/404.png": "/client/static/media/404.966c8c3454927791394d.png",
+    "static/media/wallpaperbetter.com_1366x768.jpg": "/client/static/media/wallpaperbetter.com_1366x768.0356270518b07a1f5e2a.jpg",
+    "static/media/fondo-detail.jpg": "/client/static/media/fondo-detail.0c18bf0a2ee3fe6c3fb8.jpg",
+    "static/media/pokemon.png": "/client/static/media/pokemon.48212ed01565e44107a3.png",
+    "static/media/pokemon-detail.jpg": "/client/static/media/pokemon-detail.aa435b4d5a04814a76cf.jpg",
+    "static/media/logout.png": "/client/static/media/logout.fe952a5ab00f77833b00.png",
+    "static/media/Forest.jpg": "/client/static/media/Forest.e9397620a8557c78b35d.jpg",
+    "index.html": "/client/index.html",
+    "static/media/arrow-right-circle.svg": "/client/static/media/arrow-right-circle.8aa80706d27a37c62a931172ea3c459d.svg",
+    "static/media/arrow-left-circle.svg": "/client/static/media/arrow-left-circle.28d014ef690d42bb6628f8b92f6b73d5.svg",
+    "main.d741f32a.css.map": "/client/static/css/main.d741f32a.css.map",
+    "main.4a11a625.js.map": "/client/static/js/main.4a11a625.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/client/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d741f32a.css",
+    "static/js/main.4a11a625.js"
+  ]
+}
