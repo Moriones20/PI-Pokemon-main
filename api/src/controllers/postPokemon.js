@@ -46,9 +46,6 @@ const postPokemon = async (req, res) => {
         hp,
         attack,
         defense,
-        speed,
-        height,
-        weight,
         types,
       },
     });
