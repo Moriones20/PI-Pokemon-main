@@ -16,7 +16,11 @@ const postPokemon = async (req, res) => {
       req.body;
     const name = req.body.name.toLowerCase();
 
-    const dbTypes = await Type.findAll();
+    const dbTypes = await Type.findAll({
+      where: {
+        name: types,
+      },
+    });
 
     const isValidType = types.every((type) =>
       dbTypes.some((dbType) => dbType.name === type)
@@ -27,8 +31,8 @@ const postPokemon = async (req, res) => {
     if (!name || !image || !hp || !attack || !defense || !types)
       return res.status(401).json({ error: "Missing data" });
 
-      const dbPokemons = await Pokemon.findAll();
-      const countPokemons = dbPokemons.length;
+    const dbPokemons = await Pokemon.findAll();
+    const countPokemons = dbPokemons.length;
     nextLocalId = countPokemons;
     const id = count + nextLocalId;
 
@@ -51,8 +55,11 @@ const postPokemon = async (req, res) => {
 
     if (!created)
       return res.status(409).json({ message: "The character already exists" });
+    
 
-    res.status(200).json({message: "The Pokemon has been created!"});
+    await pokemon.setPokemonTypes(dbTypes);
+
+    res.status(200).json({ message: "The Pokemon has been created!" });
     nextLocalId++;
   } catch (error) {
     res.status(500).send(error.message);
