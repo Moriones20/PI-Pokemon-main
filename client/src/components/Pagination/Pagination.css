@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: row;
   margin: 20px;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 4px;
   box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.4);
 }
@@ -23,7 +23,7 @@
 }
 
 .paginate-container input {
-  width: 21px;
+  width: 42px;
   padding: 2px 4px;
   font-size: 15px;
 }

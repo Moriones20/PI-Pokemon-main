@@ -17,7 +17,7 @@ const pokemons = async (req, res) => {
       };
     });
 
-    const { data } = await axios.get(`${API_URL}/pokemon?limit=50`);
+    const { data } = await axios.get(`${API_URL}/pokemon?limit=200`);
     const apiPokemons = data.results;
     const pokemonData = await Promise.all(
       apiPokemons.map((pokemon) => axios.get(pokemon.url))
