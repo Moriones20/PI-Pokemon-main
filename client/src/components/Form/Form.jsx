@@ -30,6 +30,14 @@ const Form = () => {
     speed: "",
     types: "",
   });
+  const isFormValid =
+    pokemon.name &&
+    pokemon.image &&
+    pokemon.hp &&
+    pokemon.attack &&
+    pokemon.defense &&
+    pokemon.speed &&
+    selectedTypes.length > 0;
 
   useEffect(() => {
     dispatch(addTypes());
@@ -41,7 +49,7 @@ const Form = () => {
       ...prevPokemon,
       [name]: value,
     }));
-  
+
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: Validation({ ...prevErrors, [name]: value })[name],
@@ -179,7 +187,7 @@ const Form = () => {
               type="number"
               name="height"
               autoComplete="off"
-              required={true}
+              required={false}
               value={pokemon.height}
               onChange={handleChange}
               className="input-form"
@@ -192,7 +200,7 @@ const Form = () => {
               type="number"
               name="weight"
               autoComplete="off"
-              required={true}
+              required={false}
               value={pokemon.weight}
               onChange={handleChange}
               className="input-form"
@@ -222,7 +230,7 @@ const Form = () => {
         </div>
         {errors.types && <p className="danger">{errors.types}</p>}
 
-        <button type="submit" className="submit">
+        <button type="submit" className={!isFormValid ? "submit-disabled" : "submit"} disabled={!isFormValid}>
           Add
         </button>
       </form>

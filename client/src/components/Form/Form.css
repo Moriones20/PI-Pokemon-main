@@ -93,6 +93,16 @@
   color: green;
 }
 
+.submit-disabled {
+  border: none;
+  outline: none;
+  background-color: #b3b3b3;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  font-size: 16px;
+}
+
 .submit {
   border: none;
   outline: none;

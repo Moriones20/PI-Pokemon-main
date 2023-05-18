@@ -1,0 +1,36 @@
+.container-404 {
+  background: url("../../Assets/wallpaperbetter.com_1366x768.jpg");
+  display: flex;
+  justify-content: baseline;
+  align-items: flex-end;
+  height: 100vh;
+}
+
+.sign-404 {
+  width: 320px;
+  margin-left: 30px;
+}
+
+.text-404 h1 {
+  position: absolute;
+  left: 75px;
+  bottom: 308px;
+}
+
+.btn-404 {
+  position: absolute;
+  left: 104px;
+  bottom: 193px;
+  background: rgba(202, 202, 202, 0.438);
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+}
+
+.btn-404:hover {
+  transform: translateY(-4px);
+  background: rgba(202, 202, 202, 0.678);
+}
