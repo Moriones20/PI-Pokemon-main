@@ -13,6 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url(./Assets/fondo-detail.jpg);
+  background-attachment: fixed;
 }
 
 code {
