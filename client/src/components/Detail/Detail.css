@@ -1,6 +1,12 @@
-.container-detail {
+.container-DelUpd {
   background: url(../../Assets/fondo-detail.jpg);
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-detail {
   position: relative;
   display: flex;
   justify-content: center;
@@ -18,7 +24,6 @@
   width: 320px;
   height: 393px;
   border-radius: 24px;
-  /* margin: 30px; */
   box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.6);
   z-index: 2;
 }
@@ -45,8 +50,12 @@
 }
 
 .detail-img img {
-  width: 300px;
+  box-sizing: content-box;
+  display: flex;
+  max-width: 300px;
+  height: 300px;
   justify-content: center;
+  padding: 10px;
 }
 
 .detail-info {

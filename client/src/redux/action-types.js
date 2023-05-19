@@ -5,3 +5,4 @@ export const SEARCH_BY_NAME = "SEARCH_BY_NAME";
 export const FILTER_TYPE = "FILTER_TYPE";
 export const FILTER_CREATED = "FILTER_CREATED";
 export const ORDER = "ORDER";
+export const DELETE_POKEMON = "DELETE_POKEMON";

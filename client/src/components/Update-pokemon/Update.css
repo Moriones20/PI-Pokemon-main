@@ -1,0 +1,54 @@
+.btn-update {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-update button {
+  position: relative;
+  border: none;
+  background: #ddae00;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 20px 53.343px 20px 16px;
+  border-radius: 12px 0 0 12px;
+  cursor: pointer;
+  margin-top: 40px;
+  box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  transform: translateX(84px);
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  transition: transform 1.5s ease-in-out;
+}
+
+.btn-update:hover button {
+  animation-name: slide-and-fade-btn-update;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-and-fade-btn-update {
+  0% {
+    transform: translateX(84px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.btn-delete button {
+  animation-name: slide-and-fade-btn-update-reverse;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-and-fade-btn-update-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(84px);
+  }
+}

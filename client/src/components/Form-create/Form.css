@@ -105,7 +105,7 @@
   font-size: 16px;
 }
 
-.submit {
+.submit-create {
   border: none;
   outline: none;
   background-color: #ddae00;
@@ -117,7 +117,7 @@
   transition: .3s ease;
 }
 
-.submit:hover {
+.submit-create:hover {
   background-color: #FF1A1A;
   color: ghostwhite;
 }

@@ -6,6 +6,7 @@ import {
   FILTER_TYPE,
   FILTER_CREATED,
   ORDER,
+  DELETE_POKEMON,
 } from "./action-types";
 
 const initialState = {
@@ -126,12 +127,18 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state,
       };
 
+    case DELETE_POKEMON:
+      const deletePokemon = state.pokemons.filter(
+        (pokemon) => pokemon.id !== payload
+      );
+      return {
+        ...state,
+        pokemons: deletePokemon,
+      };
+
     default:
       return { ...state };
   }
 };
 
 export default reducer;
-
-// [...state.pokemonsOrder].sort((a, b) => b.localeCompare(a));
-// if (payload === "ASC") [...state.pokemonsOrder].sort();

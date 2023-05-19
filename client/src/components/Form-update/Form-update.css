@@ -1,0 +1,74 @@
+.container-update {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-update {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 520px;
+  background-color: #333333;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  margin: 20px 0;
+  box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.4);
+}
+
+.form-update label {
+  position: relative;
+}
+
+.form-update label .input-form {
+  background: #333333;
+  color: ghostwhite;
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid #5c5c5c;
+  border-radius: 10px;
+}
+
+.form-update label .input-form + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: #c2c2c2;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form-update label .input-form:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form-update label .input-form:focus + span,.form-update label .input-form:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form-update label .input-form:valid + span {
+  color: #ddae00;
+}
+
+.submit-update {
+  border: none;
+  outline: none;
+  background-color: #ddae00;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+.submit-update:hover {
+  background-color: #FF1A1A;
+  color: ghostwhite;
+}

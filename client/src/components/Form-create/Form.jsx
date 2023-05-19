@@ -91,7 +91,7 @@ const Form = () => {
     <div className="container-create">
       <form onSubmit={handleSubmit} className="form-create">
         <p className="title">Create your own Pokemon!</p>
-
+    
         <label htmlFor="">
           <input
             type="text"
@@ -229,7 +229,7 @@ const Form = () => {
         </div>
         {errors.types && <p className="danger">{errors.types}</p>}
 
-        <button type="submit" className={!isFormValid ? "submit-disabled" : "submit"} disabled={!isFormValid}>
+        <button type="submit" className={!isFormValid ? "submit-disabled" : "submit-create"} disabled={!isFormValid}>
           Add
         </button>
       </form>

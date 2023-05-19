@@ -1,0 +1,54 @@
+.btn-delete {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-delete button {
+  position: relative;
+  border: none;
+  background: #FF1A1A;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 20px 30px 20px 16px;
+  border-radius: 12px 0 0 12px;
+  cursor: pointer;
+  margin-bottom: 60px;
+  box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  transform: translateX(84px);
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  transition: transform 1.5s ease-in-out;
+}
+
+.btn-delete:hover button {
+  animation-name: slide-and-fade-btn-delete;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-and-fade-btn-delete {
+  0% {
+    transform: translateX(84px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.btn-delete button {
+  animation-name: slide-and-fade-btn-delete-reverse;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-and-fade-btn-delete-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(84px);
+  }
+}

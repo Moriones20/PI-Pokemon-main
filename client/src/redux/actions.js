@@ -7,6 +7,7 @@ import {
   FILTER_TYPE,
   FILTER_CREATED,
   ORDER,
+  DELETE_POKEMON,
 } from "./action-types";
 import axios from "axios";
 
@@ -90,5 +91,20 @@ export const orderCards = (order) => {
   return {
     type: ORDER,
     payload: order,
+  };
+};
+
+export const deletePokemon = (id) => {
+  const endpoint = `http://localhost:3001/pokemons/delete/${id}`;
+  return async (dispatch) => {
+    try {
+      await axios.delete(endpoint);
+      return dispatch({
+        type: DELETE_POKEMON,
+        payload: id,
+      });
+    } catch (error) {
+      window.alert(error.response.data);
+    }
   };
 };
