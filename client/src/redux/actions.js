@@ -12,7 +12,7 @@ import {
 import axios from "axios";
 
 export const addPokemons = () => {
-  const endpoint = "http://localhost:3001/pokemons";
+  const endpoint = "pokemons";
   return async (dispatch) => {
     try {
       const pokemonsResponse = await axios.get(endpoint);
@@ -28,7 +28,7 @@ export const addPokemons = () => {
 };
 
 export const addTypes = () => {
-  const loadTypes = "http://localhost:3001/types";
+  const loadTypes = "types";
   return async (dispatch) => {
     try {
       const typesResponse = await axios.get(loadTypes);
@@ -44,7 +44,7 @@ export const addTypes = () => {
 };
 
 export const searchById = (id) => {
-  const endpoint = `http://localhost:3001/pokemons/${id}`;
+  const endpoint = `pokemons/${id}`;
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
@@ -59,7 +59,7 @@ export const searchById = (id) => {
 };
 
 export const searchByName = (name) => {
-  const endpoint = `http://localhost:3001/pokemons/byname/?name=${name}`;
+  const endpoint = `pokemons/byname/?name=${name}`;
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
@@ -95,7 +95,7 @@ export const orderCards = (order) => {
 };
 
 export const deletePokemon = (id) => {
-  const endpoint = `http://localhost:3001/pokemons/delete/${id}`;
+  const endpoint = `pokemons/delete/${id}`;
   return async (dispatch) => {
     try {
       await axios.delete(endpoint);

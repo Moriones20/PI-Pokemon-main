@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Form = () => {
   const dispatch = useDispatch();
-  const endpoint = "http://localhost:3001/pokemons/";
+  const endpoint = "pokemons/";
   const Types = useSelector((state) => state.types);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [pokemon, setPokemon] = useState({

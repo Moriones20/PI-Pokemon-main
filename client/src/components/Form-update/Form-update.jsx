@@ -8,8 +8,8 @@ import axios from "axios";
 
 const FormUpdate = () => {
   const { id } = useParams();
-  const endpointUpdate = `http://localhost:3001/pokemons/update/${id}`;
-  const endpointGetById = `http://localhost:3001/pokemons/${id}`;
+  const endpointUpdate = `pokemons/update/${id}`;
+  const endpointGetById = `pokemons/${id}`;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const Types = useSelector((state) => state.types);

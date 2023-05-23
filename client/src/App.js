@@ -1,12 +1,14 @@
 import "./App.css";
-import Nav from "./components/Nav/Nav";
-import Home from "./components/Home/Home";
-import Detail from "./components/Detail/Detail";
-import Landing from "./components/Landing/Landing";
-import NotFound from "./components/NotFound/NotFound";
-import FormCreate from "./components/Form-create/Form";
-import FormUpdate from "./components/Form-update/Form-update";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import axios from "axios";
+import FormUpdate from "./components/Form-update/Form-update";
+import FormCreate from "./components/Form-create/Form";
+import NotFound from "./components/NotFound/NotFound";
+import Landing from "./components/Landing/Landing";
+import Detail from "./components/Detail/Detail";
+import Home from "./components/Home/Home";
+import Nav from "./components/Nav/Nav";
+axios.defaults.baseURL = "http://localhost:3001/";
 
 function App() {
   const location = useLocation();

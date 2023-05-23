@@ -8,7 +8,7 @@ import Update from "../Update-pokemon/Update";
 
 const Detail = () => {
   const { id } = useParams();
-  const endpoint = `http://localhost:3001/pokemons/${id}`;
+  const endpoint = `pokemons/${id}`;
   const [pokemon, setPokemon] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
