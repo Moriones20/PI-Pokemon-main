@@ -37,7 +37,7 @@
   }
 }
 
-.btn-delete button {
+.btn-update button {
   animation-name: slide-and-fade-btn-update-reverse;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
