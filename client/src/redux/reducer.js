@@ -12,8 +12,7 @@ import {
 const initialState = {
   types: [],
   pokemons: [],
-  pokemonsType: [],
-  pokemonsCopy: [],
+  pokemonsAux: [],
   pokemonsCreated: [],
   pokemonsOrder: [],
 };
@@ -24,8 +23,7 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         pokemons: payload,
-        pokemonsType: payload,
-        pokemonsCopy: payload,
+        pokemonsAux: payload,
         pokemonsCreated: payload,
         pokemonsOrder: payload,
       };
@@ -54,10 +52,12 @@ const reducer = (state = initialState, { type, payload }) => {
       if (payload === "all") {
         return {
           ...state,
-          pokemons: state.pokemonsCopy,
+          pokemons: state.pokemonsAux,
+          pokemonsCreated: state.pokemonsAux,
+          pokemonsOrder: state.pokemonsAux,
         };
       } else {
-        const filteredPokemons = state.pokemonsType.filter((pokemon) =>
+        const filteredPokemons = state.pokemonsAux.filter((pokemon) =>
           pokemon.types.some((type) => type === payload)
         );
         return {
@@ -72,7 +72,8 @@ const reducer = (state = initialState, { type, payload }) => {
       if (payload === "all") {
         return {
           ...state,
-          pokemons: state.pokemonsCopy,
+          pokemons: state.pokemonsCreated,
+          pokemonsOrder: state.pokemonsCreated,
         };
       } else {
         const filteredPokemons = state.pokemonsCreated.filter(
@@ -81,7 +82,6 @@ const reducer = (state = initialState, { type, payload }) => {
         return {
           ...state,
           pokemons: filteredPokemons,
-          pokemonsType: filteredPokemons,
           pokemonsOrder: filteredPokemons,
         };
       }
@@ -94,8 +94,6 @@ const reducer = (state = initialState, { type, payload }) => {
         return {
           ...state,
           pokemons: ascName,
-          pokemonsType: ascName,
-          pokemonsCreated: ascName,
         };
       }
       if (payload === "DESC_NAME") {
@@ -105,8 +103,6 @@ const reducer = (state = initialState, { type, payload }) => {
         return {
           ...state,
           pokemons: descName,
-          pokemonsType: descName,
-          pokemonsCreated: descName,
         };
       }
       if (payload === "ASC_ATK") {
@@ -116,8 +112,6 @@ const reducer = (state = initialState, { type, payload }) => {
         return {
           ...state,
           pokemons: ascAtk,
-          pokemonsType: ascAtk,
-          pokemonsCreated: ascAtk,
         };
       }
       if (payload === "DESC_ATK") {
@@ -127,8 +121,6 @@ const reducer = (state = initialState, { type, payload }) => {
         return {
           ...state,
           pokemons: descAtk,
-          pokemonsType: descAtk,
-          pokemonsCreated: descAtk,
         };
       }
       return {
