@@ -6,6 +6,7 @@ import { addPokemons, addTypes } from "../../redux/actions";
 import { NavLink } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
 import Loading from "../Loading/Loading";
+import Filter from "./Options/Filter/Filter";
 
 const Card = () => {
   //Add pokemons
@@ -38,6 +39,7 @@ const Card = () => {
         <Loading />
       ) : (
         <div className="container-cards">
+          {<Filter setPage={setPage}/>}
           <h1>Pokemons</h1>
           <div className="pokemons">
             {Array.isArray(Pokemons) &&
