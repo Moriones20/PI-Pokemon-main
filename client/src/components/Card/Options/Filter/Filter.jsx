@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { filterCardsType, filterCardsCreated } from "../../../../redux/actions";
 import { useState } from "react";
 
-const Filter = ({ setPage }) => {
+const Filter = () => {
   const dispatch = useDispatch();
   const Types = useSelector((state) => state.types);
   const [isOpenType, setIsOpenType] = useState(false);
@@ -11,12 +11,10 @@ const Filter = ({ setPage }) => {
 
   const handleFilterType = (event) => {
     dispatch(filterCardsType(event.target.value));
-    setPage(1);
   };
 
   const handleFilterCreated = (event) => {
     dispatch(filterCardsCreated(event.target.value));
-    setPage(1);
   };
 
   const handleContainerType = () => {
