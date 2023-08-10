@@ -8,7 +8,7 @@ import Landing from "./components/Landing/Landing";
 import Detail from "./components/Detail/Detail";
 import Home from "./components/Home/Home";
 import Nav from "./components/Nav/Nav";
-axios.defaults.baseURL = "https://pi-pokemon-main-production.up.railway.app/";
+axios.defaults.baseURL = "https://pi-pokemon-main-production-3158.up.railway.app/";
 
 function App() {
   const location = useLocation();
